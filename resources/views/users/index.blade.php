@@ -1,5 +1,14 @@
 @extends('layouts.default')
-@section('title','个人信息页面')
+@section('title','所有用户')
 @section('content')
-    <h1>个人信息页面显示</h1>
+    <div class="col-md-offset-2 col-md-8">
+      <h1>所有用户</h1>
+      <ul class="users">
+        @foreach ($users as $user)
+            @include('users._user')
+        @endforeach
+      </ul>
+
+      {!! $users->render() !!}
+    </div>
 @stop
